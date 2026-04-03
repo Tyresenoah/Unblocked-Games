@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Unblocked Games Hub 🎮
 
-# Run and deploy your AI Studio app
+A sleek, modern, and responsive unblocked games portal built with React and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## 🚀 Deployment to GitHub Pages
 
-View your app in AI Studio: https://ai.studio/apps/90495d88-45d6-4fb7-b28c-cd3ac7340dbb
+To host this website on GitHub Pages, you need to build the project first and then deploy the `dist` folder.
 
-## Run Locally
+### Option 1: Automatic Deployment (Recommended)
 
-**Prerequisites:**  Node.js
+1.  **Install the gh-pages package:**
+    ```bash
+    npm install gh-pages --save-dev
+    ```
+2.  **Add deployment scripts to `package.json`:**
+    ```json
+    "scripts": {
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d dist"
+    }
+    ```
+3.  **Run the deploy command:**
+    ```bash
+    npm run deploy
+    ```
 
+### Option 2: Manual Deployment
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1.  **Build the project:**
+    ```bash
+    npm run build
+    ```
+2.  **Upload the contents of the `dist` folder** to your GitHub repository's `gh-pages` branch or a specific folder (like `docs`) and configure GitHub Pages to serve from there.
+
+## 🛠 Features
+
+- **Search & Filter:** Find games by title or category.
+- **Immersive Player:** Play games in a dedicated iframe view.
+- **Responsive:** Works on mobile, tablet, and desktop.
+- **JSON-based Library:** Easily add new games by editing `src/data/games.json`.
+
+## 📝 Adding New Games
+
+To add a new game, simply edit `src/data/games.json` and add a new entry:
+
+```json
+{
+  "id": "game-id",
+  "title": "Game Title",
+  "description": "Short description of the game.",
+  "category": "Category Name",
+  "thumbnail": "URL to thumbnail image",
+  "iframeUrl": "URL to the game's iframe source"
+}
+```
